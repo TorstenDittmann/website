@@ -18,7 +18,7 @@
   </p>
   <span class="actions">
     {#if github}
-      <a href={github}>
+      <a target="_blank" href={github}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -42,7 +42,7 @@
       </a>
     {/if}
     {#if homepage}
-      <a href={homepage}>
+      <a target="_blank" href={homepage}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"

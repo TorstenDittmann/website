@@ -57,7 +57,7 @@
   <Section>
     <h1 slot="title">About</h1>
     <span class="socials">
-      <a href="https://github.com/torstendittmann">
+      <a target="_blank" href="https://github.com/torstendittmann">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -79,7 +79,7 @@
             fill="rgba(255,255,255,1)" />
         </svg>
       </a>
-      <a href="https://www.linkedin.com/in/torstendittmann">
+      <a target="_blank" href="https://www.linkedin.com/in/torstendittmann">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
