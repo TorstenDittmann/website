@@ -1,14 +1,14 @@
 <script>
   export let title;
 
-  export let github;
-  export let homepage;
+  export let github = false;
+  export let homepage = false;
 </script>
 
 <style>
-.project {
+  .project {
     width: 100%;
-}
+  }
 </style>
 
 <div class="project">
@@ -18,7 +18,7 @@
   </p>
   <span class="actions">
     {#if github}
-      <a target="_blank" href={github}>
+      <a target="_blank" rel="noopener" href={github}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -42,7 +42,7 @@
       </a>
     {/if}
     {#if homepage}
-      <a target="_blank" href={homepage}>
+      <a target="_blank" rel="noopener" href={homepage}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"

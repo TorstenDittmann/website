@@ -52,12 +52,12 @@
       <h1>Torsten Dittmann</h1>
       <h3>Frontend Developer</h3>
     </div>
-    <img class="avatar" src="avatar.png" alt="Torsten Dittmann" />
+    <img class="avatar" src="avatar.webp" alt="Torsten Dittmann" />
   </Section>
   <Section>
     <h1 slot="title">About</h1>
     <span class="socials">
-      <a target="_blank" href="https://github.com/torstendittmann">
+      <a target="_blank" rel="noopener" href="https://github.com/torstendittmann">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -79,7 +79,7 @@
             fill="rgba(255,255,255,1)" />
         </svg>
       </a>
-      <a target="_blank" href="https://www.linkedin.com/in/torstendittmann">
+      <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/torstendittmann">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
