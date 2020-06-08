@@ -9,6 +9,33 @@
   .project {
     width: 100%;
   }
+
+  .actions a svg {
+    opacity: 0.7;
+  }
+
+  .actions a:hover svg {
+    opacity: 1;
+    animation: rotate 0.4s ease-in both;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0);
+    }
+    25% {
+      transform: rotate(30deg);
+    }
+    50% {
+      transform: rotate(-30deg);
+    }
+    75% {
+      transform: rotate(30deg);
+    }
+    100% {
+      transform: rotate(0);
+    }
+  }
 </style>
 
 <div class="project">
@@ -18,12 +45,12 @@
   </p>
   <span class="actions">
     {#if github}
-      <a target="_blank" rel="noopener" href={github}>
+      <a target="_blank" rel="noopener" href={github} title="GitHub">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
-          width="36"
-          height="36">
+          width="24"
+          height="24">
           <path fill="none" d="M0 0h24v24H0z" />
           <path
             d="M12 2C6.475 2 2 6.475 2 12a9.994 9.994 0 0 0 6.838
@@ -42,12 +69,12 @@
       </a>
     {/if}
     {#if homepage}
-      <a target="_blank" rel="noopener" href={homepage}>
+      <a target="_blank" rel="noopener" href={homepage} title="Website">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
-          width="36"
-          height="36">
+          width="24"
+          height="24">
           <path fill="none" d="M0 0h24v24H0z" />
           <path
             d="M6 19h12V9.157l-6-5.454-6 5.454V19zm13 2H5a1 1 0 0
