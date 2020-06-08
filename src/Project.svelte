@@ -6,7 +6,9 @@
 </script>
 
 <style>
-
+.project {
+    width: 100%;
+}
 </style>
 
 <div class="project">

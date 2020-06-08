@@ -9,21 +9,23 @@
     margin: 0 auto;
   }
 
-  h1 {
+  h1,
+  h3 {
     text-align: center;
-    font-size: 3rem;
+  }
+  h1 {
+    font-size: 2.5rem;
   }
 
   ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    text-align: left;
+    text-align: center;
   }
 
   img.avatar {
     border-radius: 50%;
-    margin: 1rem;
     max-width: 80vw;
   }
 
@@ -36,6 +38,10 @@
 
     img.avatar {
       max-width: 25vw;
+	}
+	
+    ul {
+      text-align: left;
     }
   }
 </style>
@@ -46,10 +52,7 @@
       <h1>Torsten Dittmann</h1>
       <h3>Frontend Developer</h3>
     </div>
-    <img
-      class="avatar"
-      src="avatar.png"
-      alt="Torsten Dittmann" />
+    <img class="avatar" src="avatar.png" alt="Torsten Dittmann" />
   </Section>
   <Section>
     <h1 slot="title">About</h1>
@@ -145,7 +148,7 @@
     <Project
       title="omnia-editor"
       github="https://github.com/TorstenDittmann/omnia-ebook-generator"
-	  homepage="https://omnia-editor.now.sh">
+      homepage="https://omnia-editor.now.sh">
       Browser based rich text editor with JSON output.
     </Project>
   </Section>
