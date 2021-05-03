@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { navigating } from "$app/stores";
+	import { navigating, page } from "$app/stores";
 
 	let open = false;
 
@@ -9,10 +9,10 @@
 <span class="menu" class:open on:click={() => (open = true)}>🍔</span>
 
 <nav class:open>
-	<a href="/">About</a>
-	<a href="/blog">Blog</a>
-	<a href="/projects">Projects</a>
-	<a href="/contact">Contact</a>
+	<a href="/" class:active={$page.path === '/'}>About</a>
+	<a href="/blog" class:active={$page.path.startsWith('/blog')}>Blog</a>
+	<a href="/projects" class:active={$page.path.startsWith('/projects')}>Projects</a>
+	<a href="/contact" class:active={$page.path === '/contact'}>Contact</a>
 	<span class="hamburger" on:click={() => (open = false)}>╳</span>
 </nav>
 
@@ -81,6 +81,11 @@
 			@include for-tablet-portrait-up {
 				line-height: 4rem;
 				display: initial;
+			}
+
+			&.active {
+				color: white;
+				background-color: black;
 			}
 
 			&:hover {
