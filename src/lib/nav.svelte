@@ -58,13 +58,17 @@
 			height: 100vh;
 			opacity: 1;
 			animation: bounce-in 500ms ease 0s 1 normal;
+
+			* {
+				display: initial;
+			}
 		}
 
 		a,
 		span {
 			cursor: pointer;
 			line-height: 8rem;
-			min-width: 6rem;
+			width: 100%;
 			text-align: center;
 			text-transform: uppercase;
 			font-size: 2rem;
@@ -72,14 +76,18 @@
 			text-decoration: none;
 			color: black;
 			background-color: white;
+			display: none;
 
 			@include for-tablet-portrait-up {
 				line-height: 4rem;
+				display: initial;
 			}
 
 			&:hover {
 				color: white;
-				background-color: black;
+				background: linear-gradient(270deg, #246655, #111212, #730b8a, #ae3000);
+				background-size: 800% 800%;
+				animation: NavHover 3s ease infinite;
 			}
 		}
 		span.hamburger {
@@ -100,6 +108,40 @@
 		}
 		100% {
 			transform: scale(1);
+		}
+	}
+
+	@-webkit-keyframes NavHover {
+		0% {
+			background-position: 0% 50%;
+		}
+		50% {
+			background-position: 100% 50%;
+		}
+		100% {
+			background-position: 0% 50%;
+		}
+	}
+	@-moz-keyframes NavHover {
+		0% {
+			background-position: 0% 50%;
+		}
+		50% {
+			background-position: 100% 50%;
+		}
+		100% {
+			background-position: 0% 50%;
+		}
+	}
+	@keyframes NavHover {
+		0% {
+			background-position: 0% 50%;
+		}
+		50% {
+			background-position: 100% 50%;
+		}
+		100% {
+			background-position: 0% 50%;
 		}
 	}
 </style>
