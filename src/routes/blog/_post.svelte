@@ -16,7 +16,7 @@
 	<h2>{article.title}</h2>
 	<p>{toDate(article.published_timestamp)}</p>
 </a>
-<hr>
+<hr />
 
 <style>
 	a {

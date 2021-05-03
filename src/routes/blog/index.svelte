@@ -19,7 +19,7 @@
 
 <script lang="ts">
 	import Transition from "$lib/transition.svelte";
-import type { Article } from "./article";
+	import type { Article } from "./article";
 	import Post from "./_post.svelte";
 
 	export let posts: Article[];
@@ -30,6 +30,6 @@ import type { Article } from "./article";
 </svelte:head>
 <Transition>
 	{#each posts as article}
-	<Post {article} />
-{/each}
+		<Post {article} />
+	{/each}
 </Transition>
