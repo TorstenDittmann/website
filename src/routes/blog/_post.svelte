@@ -29,6 +29,8 @@
 
 	a h2 {
 		margin: 0;
+		text-align: left;
+		width: 100%;
 	}
 
 	a p {
