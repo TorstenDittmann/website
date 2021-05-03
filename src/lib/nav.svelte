@@ -9,10 +9,10 @@
 <span class="menu" class:open on:click={() => (open = true)}>🍔</span>
 
 <nav class:open>
-	<a href="/" class:active={$page.path === '/'}>About</a>
-	<a href="/blog" class:active={$page.path.startsWith('/blog')}>Blog</a>
-	<a href="/projects" class:active={$page.path.startsWith('/projects')}>Projects</a>
-	<a href="/contact" class:active={$page.path === '/contact'}>Contact</a>
+	<a href="/" class:active={$page.path === "/"}>About</a>
+	<a href="/blog" class:active={$page.path.startsWith("/blog")}>Blog</a>
+	<a href="/projects" class:active={$page.path.startsWith("/projects")}>Projects</a>
+	<a href="/contact" class:active={$page.path === "/contact"}>Contact</a>
 	<span class="hamburger" on:click={() => (open = false)}>╳</span>
 </nav>
 
@@ -83,17 +83,16 @@
 				display: initial;
 			}
 
-			&.active {
-				color: white;
-				background-color: black;
-			}
-
 			&:hover {
 				color: white;
 				background: linear-gradient(270deg, #246655, #111212, #730b8a, #ae3000);
 				background-size: 800% 800%;
 				animation: NavHover 3s ease infinite;
 			}
+		}
+		a.active {
+			color: white;
+			background-color: black;
 		}
 		span.hamburger {
 			@include for-tablet-portrait-up {

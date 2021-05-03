@@ -9,7 +9,7 @@
 		year: "numeric"
 	});
 
-	const toDate = (timestamp) => dateFormat.format(new Date(timestamp));
+	const toDate = (timestamp: string) => dateFormat.format(new Date(timestamp));
 </script>
 
 <a href={`blog${article.path}`}>
