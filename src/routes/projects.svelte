@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-	<title>Projects</title>
+	<title>Projects - dittmann.dev</title>
 </svelte:head>
 
 <Transition>

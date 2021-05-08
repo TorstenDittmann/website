@@ -8,7 +8,7 @@
 </script>
 
 <svelte:head>
-	<title>Torsten Dittmann</title>
+	<title>Torsten Dittmann - dittmann.dev</title>
 </svelte:head>
 <Transition>
 	<div class="intro">

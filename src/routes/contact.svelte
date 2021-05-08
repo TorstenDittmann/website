@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-	<title>Contact</title>
+	<title>Contact - dittmann.dev</title>
 </svelte:head>
 
 <Transition>
