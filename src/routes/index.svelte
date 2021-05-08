@@ -12,7 +12,8 @@
 </svelte:head>
 <Transition>
 	<div class="intro">
-		<h1>Torsten Dittmann</h1>
+		<h1>Site is WIP</h1>
+		<h2>Torsten Dittmann</h2>
 		<img class="avatar" src={Avatar} alt="Torsten Dittmann" />
 		<h2>Software Developer</h2>
 		<p>
