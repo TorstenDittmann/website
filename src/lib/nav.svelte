@@ -11,8 +11,7 @@
 <nav class:open>
 	<a href="/" class:active={$page.path === "/"}>About</a>
 	<a href="/blog" class:active={$page.path.startsWith("/blog")}>Blog</a>
-	<a href="/projects" class:active={$page.path.startsWith("/projects")}>Projects</a>
-	<a href="/contact" class:active={$page.path === "/contact"}>Contact</a>
+	<a href="/tools" class:active={$page.path.startsWith("/tools")}>Tools</a>
 	<span class="hamburger" on:click={() => (open = false)}>╳</span>
 </nav>
 
