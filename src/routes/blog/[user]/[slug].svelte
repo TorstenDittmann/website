@@ -19,7 +19,6 @@
 </script>
 
 <script lang="ts">
-	import Transition from "$lib/transition.svelte";
 	import micromark from "micromark";
 	import gfmSyntax from "micromark-extension-gfm";
 	import gfmHtml from "micromark-extension-gfm/html.js";
@@ -42,7 +41,6 @@
 	const toDate = (timestamp: string) => dateFormat.format(new Date(timestamp));
 </script>
 
-<Transition>
 	<h1>{post.title}</h1>
 	<img class="cover" src={post.cover_image} alt={post.title} />
 	<div class="subtitle">
@@ -53,7 +51,6 @@
 	<article>
 		{@html micromark(post.body_markdown, options)}
 	</article>
-</Transition>
 
 <style>
 	h1 {

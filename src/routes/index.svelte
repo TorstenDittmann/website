@@ -4,13 +4,11 @@
 
 <script lang="ts">
 	import Avatar from "$lib/assets/avatar.webp";
-	import Transition from "$lib/transition.svelte";
 </script>
 
 <svelte:head>
 	<title>Torsten Dittmann</title>
 </svelte:head>
-<Transition>
 	<div class="intro">
 		<h1>Torsten Dittmann</h1>
 		<img class="avatar" src={Avatar} alt="Torsten Dittmann" />
@@ -20,7 +18,6 @@
 			nature.
 		</p>
 	</div>
-</Transition>
 
 <style lang="scss">
 	.intro {
