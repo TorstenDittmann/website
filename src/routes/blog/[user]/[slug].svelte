@@ -41,16 +41,16 @@
 	const toDate = (timestamp: string) => dateFormat.format(new Date(timestamp));
 </script>
 
-	<h1>{post.title}</h1>
-	<img class="cover" src={post.cover_image} alt={post.title} />
-	<div class="subtitle">
-		<span>{toDate(post.published_timestamp)}</span> - Originally posted on
-		<a href={post.url}>Dev.to</a>
-	</div>
-	<hr />
-	<article>
-		{@html micromark(post.body_markdown, options)}
-	</article>
+<h1>{post.title}</h1>
+<img class="cover" src={post.cover_image} alt={post.title} />
+<div class="subtitle">
+	<span>{toDate(post.published_timestamp)}</span> - Originally posted on
+	<a href={post.url}>Dev.to</a>
+</div>
+<hr />
+<article>
+	{@html micromark(post.body_markdown, options)}
+</article>
 
 <style>
 	h1 {

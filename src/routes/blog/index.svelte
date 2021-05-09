@@ -27,6 +27,6 @@
 <svelte:head>
 	<title>Blog</title>
 </svelte:head>
-	{#each posts as article}
-		<Post {article} />
-	{/each}
+{#each posts as article}
+	<Post {article} />
+{/each}
