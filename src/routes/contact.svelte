@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>Contact</title>
+	<title>Contact - dittmann.dev</title>
 </svelte:head>
 
 <h1>Contact</h1>

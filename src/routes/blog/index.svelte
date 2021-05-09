@@ -25,7 +25,7 @@
 </script>
 
 <svelte:head>
-	<title>Blog</title>
+	<title>Blog - dittmann.dev</title>
 </svelte:head>
 {#each posts as article}
 	<Post {article} />

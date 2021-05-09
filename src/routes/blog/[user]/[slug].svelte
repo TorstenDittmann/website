@@ -18,6 +18,10 @@
 	};
 </script>
 
+<svelte:head>
+	<title>{post.title} - dittmann.dev</title>
+</svelte:head>
+
 <script lang="ts">
 	import micromark from "micromark";
 	import gfmSyntax from "micromark-extension-gfm";
