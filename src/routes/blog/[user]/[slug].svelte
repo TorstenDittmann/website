@@ -24,9 +24,9 @@
 
 <script lang="ts">
 	import type { Article } from "../article";
-	import { highlightAll } from "highlight.js";
-import { onMount } from "svelte";
-
+	import { onMount } from "svelte";
+	import highlight from 'highlight.js';
+	const {highlightAll} = highlight;
 	export let post: Article;
 
 	const dateFormat = new Intl.DateTimeFormat("en", {
