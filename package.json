@@ -11,7 +11,7 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-vercel": "next",
-		"@sveltejs/kit": "^1.0.0-next.102",
+		"@sveltejs/kit": "^1.0.0-next.107",
 		"@types/prismjs": "^1.16.5",
 		"@typescript-eslint/eslint-plugin": "^4.22.1",
 		"@typescript-eslint/parser": "^4.22.1",
@@ -20,7 +20,7 @@
 		"eslint-plugin-svelte3": "^3.2.0",
 		"micromark": "^2.11.4",
 		"micromark-extension-gfm": "^0.3.3",
-		"prettier": "~2.2.1",
+		"prettier": "^2.3.0",
 		"prettier-plugin-svelte": "^2.2.0",
 		"sass": "^1.32.12",
 		"svelte": "^3.34.0",
