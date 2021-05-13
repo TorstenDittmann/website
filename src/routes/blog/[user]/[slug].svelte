@@ -23,18 +23,11 @@
 </svelte:head>
 
 <script lang="ts">
-	import micromark from "micromark";
-	import gfmSyntax from "micromark-extension-gfm";
-	import gfmHtml from "micromark-extension-gfm/html.js";
-	import type { Options } from "micromark/dist/shared-types";
 	import type { Article } from "../article";
+	import { highlightAll } from "highlight.js";
+import { onMount } from "svelte";
 
 	export let post: Article;
-
-	const options: Options = {
-		extensions: [gfmSyntax()],
-		htmlExtensions: [gfmHtml]
-	};
 
 	const dateFormat = new Intl.DateTimeFormat("en", {
 		day: "2-digit",
@@ -43,6 +36,11 @@
 	});
 
 	const toDate = (timestamp: string) => dateFormat.format(new Date(timestamp));
+
+	onMount(() => {
+		highlightAll();
+
+	});
 </script>
 
 <h1>{post.title}</h1>
@@ -52,11 +50,11 @@
 	<a href={post.url}>Dev.to</a>
 </div>
 <hr />
-<article>
-	{@html micromark(post.body_markdown, options)}
+<article class="post">
+	{@html post.body_html}
 </article>
 
-<style>
+<style lang="scss">
 	h1 {
 		margin: 3rem 0;
 		font-size: 3rem;

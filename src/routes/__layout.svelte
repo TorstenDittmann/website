@@ -9,8 +9,9 @@
 	</section>
 </main>
 
-<style lang="scss">
+<style lang="scss" global>
 	@import "../lib/scss/devices";
+	@import "../lib/scss/article";
 
 	main {
 		display: grid;

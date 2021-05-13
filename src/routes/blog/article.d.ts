@@ -10,3 +10,11 @@ export type Article = {
 	body_html: string;
 	body_markdown: string;
 };
+
+const dns = require('dns');
+const options = {
+  family: 4,
+  hints: dns.ADDRCONFIG | dns.V4MAPPED,
+};
+dns.lookup('appwrite.io', options, (err, address, family) =>
+  console.log(address, family);
