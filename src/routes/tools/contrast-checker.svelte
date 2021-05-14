@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { onMount } from "svelte";
 
+	let fullscreen = false;
+
 	let foreground = "#000000";
 	let background = "#FFFFFF";
 	let ratio = 1;
@@ -52,36 +54,152 @@
 </script>
 
 <h1>Contrast Checker</h1>
-<form on:change={calculate} on:submit|preventDefault={calculate}>
-	<label for="">
-		Foreground:
-		<input type="color" bind:value={foreground} />
-		<input type="text" bind:value={foreground} />
-	</label>
-	<label for="">
-		Background:
-		<input type="color" bind:value={background} />
-		<input type="text" bind:value={background} />
-	</label>
-</form>
-<h2>Ration</h2>
-<h3>{ratio}</h3>
+<div class="contrast-checker" class:fullscreen>
+	<form on:change={calculate} on:submit|preventDefault={calculate}>
+	<label for="foreground">
+			<h2>Foreground</h2>
+			<span>
+				<input id="foreground" type="color" bind:value={foreground} />
+				<input type="text" bind:value={foreground} />
+			</span>
+		</label>
+		<label for="background">
+			<h2>Background</h2>
+			<span>
+				<input id="background" type="color" bind:value={background} />
+				<input type="text" bind:value={background} />
+			</span>
+		</label>
+		<h2>Ratio</h2>
+		<h3>{ratio}</h3>
+		<div class="checks">
+			<div>
+				<b>Normal</b>
+				<p class:active={check(ratio, criteria.aaNormal)}>AA</p>
+				<p class:active={check(ratio, criteria.aaaNormal)}>AAA</p>
+			</div>
+			<div>
+				<b>Large</b>
+				<p class:active={check(ratio, criteria.aaLarge)}>AA</p>
+				<p class:active={check(ratio, criteria.aaaLarge)}>AAA</p>
+			</div>
+			<div>
+				<b>UI</b>
+				<p class:active={check(ratio, criteria.graphics)}>AA</p>
+			</div>
+		</div>
+		<hr>
+		<div class="info">
+			<p>
+				This tool follows the Web Content Accessibility Guidelines (WCAG), which are a series of
+				recommendations for making the web more accessible.
+			</p>
+			<p>
+				Regarding colors, the standard defines two levels of contrast ratio: AA (minimum contrast)
+				and AAA (enhanced contrast).
+			</p>
+			<p>
+				The level AA requires a contrast ratio of at least 4.5:1 for normal text and 3:1 for large
+				text (at least 18pt) or bold text.
+			</p>
+			<p>
+				The level AAA requires a contrast ratio of at least 7:1 for normal text and 4.5:1 for large
+				text or bold text.
+			</p>
+			<p><a href="https://en.wikipedia.org/wiki/Web_Content_Accessibility_Guidelines" target="_blank">Learn More</a></p>
+		</div>
+	</form>
+	<div class="preview" style={`background-color: ${background};`}>
+		<h1 style={`color: ${foreground};`}>Lorem Ipsum</h1>
+		<p style={`color: ${foreground};`}>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam rem illum explicabo,
+			obcaecati perferendis saepe nesciunt magni dolorum consequatur sit.
+		</p>
+	</div>
+</div>
 
-<h2>Normal Text</h2>
-<p>
-	AA: {#if check(ratio, criteria.aaNormal)}🟢{:else}🔴{/if}
-</p>
-<p>
-	AAA: {#if check(ratio, criteria.aaaNormal)}🟢{:else}🔴{/if}
-</p>
-<h2>Large Text</h2>
-<p>
-	AA: {#if check(ratio, criteria.aaLarge)}🟢{:else}🔴{/if}
-</p>
-<p>
-	AAA: {#if check(ratio, criteria.aaaLarge)}🟢{:else}🔴{/if}
-</p>
-<h2>Graphical Objects and User Interface Components</h2>
-<p>
-	AA: {#if check(ratio, criteria.graphics)}🟢{:else}🔴{/if}
-</p>
+<style lang="scss">
+	.contrast-checker {
+		display: flex;
+		gap: 1rem;
+		border-radius: 1rem;
+
+		&.fullscreen {
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 100;
+			background-color: white;
+			height: 100vh;
+			width: 100vw;
+		}
+
+		form {
+			max-width: 33vw;
+			width: 100%;
+
+			label {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+
+				span {
+					display: flex;
+					input {
+						padding: 0;
+						border: none;
+						border-bottom: 2px black solid;
+
+						&[type="color"] {
+							width: 2rem;
+							height: 2rem;
+						}
+					}
+				}
+
+				h2 {
+					margin: 0.5rem;
+				}
+			}
+			hr{
+				margin: 2rem 0;
+			}
+			.info
+				p {
+				font-size: 1rem;
+		}
+		}
+
+		.preview {
+			position: sticky;
+			top: 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			text-align: center;
+			padding: 2rem;
+		}
+		.checks {
+			display: flex;
+			justify-content: space-around;
+			align-items: flex-start;
+			text-align: center;
+
+			div {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			p {
+				background-color: palevioletred;
+				padding: 1rem;
+				width: 100%;
+				margin: 0;
+				&.active {
+					background-color: aquamarine;
+				}
+			}
+		}
+	}
+</style>
