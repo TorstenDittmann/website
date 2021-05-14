@@ -4,24 +4,22 @@
 
 <script lang="ts">
 	import Avatar from "$lib/assets/avatar.webp";
-	import Transition from "$lib/transition.svelte";
 </script>
 
 <svelte:head>
 	<title>Torsten Dittmann - dittmann.dev</title>
 </svelte:head>
-<Transition>
-	<div class="intro">
-		<h1>Site is WIP</h1>
-		<h2>Torsten Dittmann</h2>
-		<img class="avatar" src={Avatar} alt="Torsten Dittmann" />
-		<h2>Software Developer</h2>
-		<p>
-			A creative and pragmatic way of thinking distinguishes me beside my positively balanced
-			nature.
-		</p>
-	</div>
-</Transition>
+
+<div class="intro">
+  <h1>Site is WIP</h1>
+  <h2>Torsten Dittmann</h2>
+  <img class="avatar" src={Avatar} alt="Torsten Dittmann" />
+  <h2>Software Developer</h2>
+  <p>
+    A creative and pragmatic way of thinking distinguishes me beside my positively balanced
+    nature.
+  </p>
+</div>
 
 <style lang="scss">
 	.intro {

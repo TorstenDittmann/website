@@ -18,7 +18,6 @@
 </script>
 
 <script lang="ts">
-	import Transition from "$lib/transition.svelte";
 	import type { Article } from "./article";
 	import Post from "./_post.svelte";
 
@@ -28,8 +27,6 @@
 <svelte:head>
 	<title>Blog - dittmann.dev</title>
 </svelte:head>
-<Transition>
-	{#each posts as article}
-		<Post {article} />
-	{/each}
-</Transition>
+{#each posts as article}
+	<Post {article} />
+{/each}

@@ -6,20 +6,6 @@ h1, h2, h3 {
     text-align: center;
 }
 
-article p {
-    line-height: 2.5rem;
-}
-
-article img {
-    max-width: 100%;
-}
-
-article pre {
-    font-family: 'JetBrains Mono', monospace;
-    background-color: #1E1E1E;
-    color: #D4D4D4;
-    border-radius: 1rem;
-    padding: 1rem;
-    font-size: 1rem;
-    overflow: scroll;
+a, a:visited {
+    color:unset;
 }

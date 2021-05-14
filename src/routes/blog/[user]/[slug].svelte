@@ -23,19 +23,11 @@
 </svelte:head>
 
 <script lang="ts">
-	import Transition from "$lib/transition.svelte";
-	import micromark from "micromark";
-	import gfmSyntax from "micromark-extension-gfm";
-	import gfmHtml from "micromark-extension-gfm/html.js";
-	import type { Options } from "micromark/dist/shared-types";
 	import type { Article } from "../article";
-
+	import { onMount } from "svelte";
+	import highlight from 'highlight.js';
+	const {highlightAll} = highlight;
 	export let post: Article;
-
-	const options: Options = {
-		extensions: [gfmSyntax()],
-		htmlExtensions: [gfmHtml]
-	};
 
 	const dateFormat = new Intl.DateTimeFormat("en", {
 		day: "2-digit",
@@ -44,22 +36,25 @@
 	});
 
 	const toDate = (timestamp: string) => dateFormat.format(new Date(timestamp));
+
+	onMount(() => {
+		highlightAll();
+
+	});
 </script>
 
-<Transition>
-	<h1>{post.title}</h1>
-	<img class="cover" src={post.cover_image} alt={post.title} />
-	<div class="subtitle">
-		<span>{toDate(post.published_timestamp)}</span> - Originally posted on
-		<a href={post.url}>Dev.to</a>
-	</div>
-	<hr />
-	<article>
-		{@html micromark(post.body_markdown, options)}
-	</article>
-</Transition>
+<h1>{post.title}</h1>
+<img class="cover" src={post.cover_image} alt={post.title} />
+<div class="subtitle">
+	<span>{toDate(post.published_timestamp)}</span> - Originally posted on
+	<a href={post.url}>Dev.to</a>
+</div>
+<hr />
+<article class="post">
+	{@html post.body_html}
+</article>
 
-<style>
+<style lang="scss">
 	h1 {
 		margin: 3rem 0;
 		font-size: 3rem;

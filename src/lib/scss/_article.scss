@@ -1,0 +1,85 @@
+@import "highlight.js/scss/atom-one-dark.scss";
+article.post {
+	p {
+		line-height: 2.5rem;
+	}
+
+	img {
+		max-width: 100%;
+	}
+	.highlight {
+		pre {
+			font-family: "JetBrains Mono", monospace;
+			font-size: 1rem;
+			code {
+				padding: 1rem 2rem;
+				border-radius: 0.5rem;
+			}
+		}
+		.highlight__panel {
+			display: none;
+		}
+	}
+	.article-body-image-wrapper {
+		display: block;
+		text-align: center;
+	}
+	.ltag__link {
+		border-top: 1px solid lightgray;
+		border-bottom: 1px solid lightgray;
+		display: block;
+		margin: 0.95em 0 1.2em;
+		max-width: 100%;
+		display: flex;
+		align-content: center;
+		align-items: center;
+		padding: 1rem;
+
+		.ltag__link__link {
+			text-decoration: none;
+		}
+
+		.ltag__link__pic img {
+			border-radius: 50%;
+		}
+
+		.ltag__link__content {
+			margin-left: 2rem;
+			h2,
+			h3 {
+				text-align: left;
+			}
+			h2 {
+				font-size: 1.5rem;
+			}
+			h3 {
+				font-size: 1.2rem;
+			}
+			.ltag__link__taglist {
+				font-size: 1rem;
+			}
+		}
+	}
+	.ltag-github-readme-tag {
+		display: flex;
+		flex-direction: column;
+		border-top: 1px solid lightgray;
+		border-bottom: 1px solid lightgray;
+		.readme-overview {
+			img {
+				max-width: 4rem;
+			}
+			h2 {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				align-content: center;
+				justify-content: center;
+				gap: 1rem;
+			}
+		}
+    .ltag-github-body, .gh-btn-container {
+      display: none;
+    }
+	}
+}
