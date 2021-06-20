@@ -11,8 +11,9 @@ article.post {
 		pre {
 			font-family: "JetBrains Mono", monospace;
 			font-size: 1rem;
+			padding: 1rem 2rem;
+			background-color: #282c34;
 			code {
-				padding: 1rem 2rem;
 				border-radius: 0.5rem;
 			}
 		}
