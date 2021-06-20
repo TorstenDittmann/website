@@ -2,7 +2,10 @@ import type { RequestHandler } from "@sveltejs/kit";
 import type { Article } from "../article";
 
 const filter = (request: Article) => {
-	request.body_html = request.body_html.replace(/href="\//g, `target="_blank" href="https://dev.to/`);
+	request.body_html = request.body_html.replace(
+		/href="\//g,
+		`target="_blank" href="https://dev.to/`
+	);
 	return request;
 };
 

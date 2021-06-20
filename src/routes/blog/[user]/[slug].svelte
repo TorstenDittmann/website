@@ -18,15 +18,11 @@
 	};
 </script>
 
-<svelte:head>
-	<title>{post.title} - dittmann.dev</title>
-</svelte:head>
-
 <script lang="ts">
 	import type { Article } from "../article";
 	import { onMount } from "svelte";
-	import highlight from 'highlight.js';
-	const {highlightAll} = highlight;
+	import highlight from "highlight.js";
+	const { highlightAll } = highlight;
 	export let post: Article;
 
 	const dateFormat = new Intl.DateTimeFormat("en", {
@@ -39,9 +35,12 @@
 
 	onMount(() => {
 		highlightAll();
-
 	});
 </script>
+
+<svelte:head>
+	<title>{post.title} - dittmann.dev</title>
+</svelte:head>
 
 <h1>{post.title}</h1>
 <img class="cover" src={post.cover_image} alt={post.title} />

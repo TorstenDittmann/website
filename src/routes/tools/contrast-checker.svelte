@@ -53,10 +53,14 @@
 	onMount(calculate);
 </script>
 
+<svelte:head>
+	<title>Contrast Checker - dittmann.dev</title>
+</svelte:head>
+
 <h1>Contrast Checker</h1>
 <div class="contrast-checker" class:fullscreen>
 	<form on:change={calculate} on:submit|preventDefault={calculate}>
-	<label for="foreground">
+		<label for="foreground">
 			<h2>Foreground</h2>
 			<span>
 				<input id="foreground" type="color" bind:value={foreground} />
@@ -88,7 +92,7 @@
 				<p class:active={check(ratio, criteria.graphics)}>AA</p>
 			</div>
 		</div>
-		<hr>
+		<hr />
 		<div class="info">
 			<p>
 				This tool follows the Web Content Accessibility Guidelines (WCAG), which are a series of
@@ -106,7 +110,11 @@
 				The level AAA requires a contrast ratio of at least 7:1 for normal text and 4.5:1 for large
 				text or bold text.
 			</p>
-			<p><a href="https://en.wikipedia.org/wiki/Web_Content_Accessibility_Guidelines" target="_blank">Learn More</a></p>
+			<p>
+				<a href="https://en.wikipedia.org/wiki/Web_Content_Accessibility_Guidelines" target="_blank"
+					>Learn More</a
+				>
+			</p>
 		</div>
 	</form>
 	<div class="preview" style={`background-color: ${background};`}>
@@ -161,13 +169,12 @@
 					margin: 0.5rem;
 				}
 			}
-			hr{
+			hr {
 				margin: 2rem 0;
 			}
-			.info
-				p {
+			.info p {
 				font-size: 1rem;
-		}
+			}
 		}
 
 		.preview {
