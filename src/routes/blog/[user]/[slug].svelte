@@ -21,8 +21,15 @@
 <script lang="ts">
 	import type { Article } from "../article";
 	import { onMount } from "svelte";
-	import highlight from "highlight.js";
-	const { highlightAll } = highlight;
+
+	import hljs from 'highlight.js/lib/core';
+	import javascript from 'highlight.js/lib/languages/javascript';
+	import dart from 'highlight.js/lib/languages/dart';
+	import typescript from 'highlight.js/lib/languages/typescript';
+	hljs.registerLanguage('javascript', javascript);
+	hljs.registerLanguage('dart', dart);
+	hljs.registerLanguage('typescript', typescript);
+
 	export let post: Article;
 
 	const dateFormat = new Intl.DateTimeFormat("en", {
@@ -34,7 +41,7 @@
 	const toDate = (timestamp: string) => dateFormat.format(new Date(timestamp));
 
 	onMount(() => {
-		highlightAll();
+		hljs.highlightAll();
 	});
 </script>
 
